@@ -1,0 +1,214 @@
+.calendar-container {
+    /* height: 80%; */
+    /* aspect-ratio: 3/2; */
+    background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1rem soild red;
+}
+
+.calendar-wrapper {
+    width: 100%;
+    max-width: 112rem;
+    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-icon {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #8b5cf6 0%, #9333ea 100%);
+    border-radius: 0.75rem;
+}
+
+.header-icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+}
+
+.header-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #ffffff, #cbd5e1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.header-subtitle {
+    color: #94a3b8;
+}
+
+.add-event-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #8b5cf6, #9333ea);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.add-event-btn:hover {
+    background: linear-gradient(to right, #7c3aed, #8b5cf6);
+    transform: scale(1.05);
+}
+
+/* Main Grid Layout */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .calendar-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Calendar Section */
+.calendar-section {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+/* Month Navigation */
+.month-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.month-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.month-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.year-title {
+    font-size: 1.25rem;
+    color: #94a3b8;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #cbd5e1;
+}
+
+/* Weekdays */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.weekday {
+    text-align: center;
+    color: #94a3b8;
+    font-weight: 500;
+    padding: 0.5rem;
+}
+
+/* Calendar Days Grid */
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.day-cell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #cbd5e1;
+}
+
+.day-cell:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.day-cell.empty {
+    opacity: 0.3;
+}
+
+.day-cell.today {
+    background: linear-gradient(135deg, #8b5cf6 0%, #9333ea 100%);
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.3);
+}
+
+.day-cell.selected {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.day-cell.selected:not(.today) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+
